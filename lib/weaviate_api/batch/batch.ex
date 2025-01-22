@@ -57,7 +57,7 @@ defmodule Noizu.Weaviate.Api.Batch do
           {:ok, Noizu.Weaviate.Struct.RespObj} | {:error, any()}
   def create_objects(objects, options \\ nil) do
     # Construct the request URL
-    url = "/v1/batch/objects"
+    url = api_base() <> "v1/batch/objects"
 
     # Construct the request body
     body = %{objects: objects}
@@ -103,7 +103,7 @@ defmodule Noizu.Weaviate.Api.Batch do
           {:ok, Noizu.Weaviate.Struct.RespObj} | {:error, any()}
   def create_references(references, options \\ nil) do
     # Construct the request URL
-    url = "/v1/batch/references"
+    url = api_base() <> "v1/batch/references"
 
     # Construct the request body
     body = %{references: references}
@@ -146,7 +146,7 @@ defmodule Noizu.Weaviate.Api.Batch do
           {:ok, Noizu.Weaviate.Struct.RespObj} | {:error, any()}
   def delete_objects(match, options \\ nil) do
     # Construct the request URL
-    url = "/v1/batch/objects"
+    url = api_base() <> "v1/batch/objects"
 
     # Construct the request body
     body = %{
